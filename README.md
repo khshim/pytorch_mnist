@@ -1,6 +1,7 @@
 ## MNIST digit classification task using PyTorch
 
 Author: Kyuhong Shim(skhu20@snu.ac.kr)
+
 If you have any questions on the code or README, please feel free to contact me.
 
 ### Performance
@@ -22,8 +23,7 @@ We split training data (60000) to train set (50000) and valid set (10000).
 Test data (10000) is already given.
 If the data is for MLP, data is 2-dim matrix, and for CNN, data is 4-dim tensor.
 
-Mini-batch is first rescaled from [0, 255] to [0, 1].
-The result is then normalized by precomputed mean and std.
+Mini-batch is first rescaled from [0, 255] to [0, 1], then normalized by precomputed mean and std.
 
 #### Part 2: MLP model
 
@@ -44,6 +44,8 @@ Fully connected layer has 256 dimension.
 #### Part 4: Training
 
 For every epoch, we train network by train set and evaluate by valid set to check overfitting.
+We use Adam optimizer for parameter update.
+
 Patience increase when valid loss does not decrease.
 Early stopping is done when the patience is bigger than max patience.
 When early stopping appears, we multiply 0.1 to learning rate and restart the training with best model.
