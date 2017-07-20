@@ -2,7 +2,7 @@ class Config(object):
 
     def __init__(self):
 
-        self.mode = 'mlp'  # 'cnn' or 'mlp'
+        self.mode = 'cnn'  # 'cnn' or 'mlp'
         self.parse_seed = 9999
         self.torch_seed = 9372
 
